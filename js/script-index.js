@@ -9,7 +9,6 @@ $(document).ready( function(){
 	
 });
 
-
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
@@ -63,11 +62,10 @@ function renderActivities(activitiesArray) {
 	  										'<span class="recipe">'+ el.recipeName+ '</span>:'+ el.text+
 	  											'<span class="location">'+ el. place+'</span>'+
 											'</span>'+
-
 										'</span>'+
-										'<div class="bg-image" style="background-image: url('+el.image +');"></div>'+
-								'</a>');
-		});
+										'<div class="bg-image" style="background-image: url('+el.image+');"></div>'+
+										'</a>');
+				});
 	if (activitiesArray.length > 0) {
 			$('.wrapper-message').hide();
 	}
