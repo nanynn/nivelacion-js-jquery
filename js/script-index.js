@@ -1,7 +1,7 @@
 $(document).ready( function(){
 	//funcion de desaparecer arrow y menu
 	$('#back').remove('index.html');
-	$('#menu').remove('recipe.html');
+	
 	printNews();
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
