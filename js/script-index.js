@@ -53,10 +53,24 @@ function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
 		activitiesArray.forEach(function(el){
 			console.log(el);
-			if (activitiesArray > 0) {
-				$('.wrapper-message').hide();
-			}
+				$('.list-activities').append('<a href="#" class="item-activity">'+
+										'<span class="attribution">'+
+										'<span class="avatar">'+
+ 											'<img src="https://avatars3.githubusercontent.com/u/204768?v=2&s=400" class="image-avatar">'+
+										 '</span>'+
+										'<span class="meta">'+
+	  									'<span class="author">'+ el.userName +'</span> made' +
+	  										'<span class="recipe">'+ el.recipeName+ '</span>:'+ el.text+
+	  											'<span class="location">'+ el. place+'</span>'+
+											'</span>'+
+
+										'</span>'+
+										'<div class="bg-image" style="background-image: url('+el.image +');"></div>'+
+								'</a>');
 		});
+	if (activitiesArray.length > 0) {
+			$('.wrapper-message').hide();
+	}
 }
 
 /*
