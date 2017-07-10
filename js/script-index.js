@@ -1,7 +1,7 @@
 $(document).ready( function(){
 	//funcion de desaparecer arrow y menu
-	$('.js-back').remove('index.html');
-	$('.js-menu').remove('recipe.html');
+	$('#back').remove('index.html');
+	$('#menu').remove('recipe.html');
 	printNews();
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
@@ -16,9 +16,9 @@ $(document).ready( function(){
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
 	recipesArray.forEach(function(e){
-		console.log(e.highlighted);
 		if(e.highlighted == true){
-			return recipesArray;
+			console.log(e.highlighted);
+			renderRecipe(e);
 		}
 	});
 }
@@ -31,8 +31,24 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
+	$('.list-recipes').append('<a class="item-recipe" href="#">'+
+								  '<span class="attribution">'+
+								   ' <span class="title-recipe">' + recipe.title + '</span>'+
+								    '<span class="metadata-recipe">'+
+								      '<span class="author-recipe">' + recipe.source.name + '</span>'+
+								      '<span class="bookmarks-recipe">'+
+								        '<span class="icon-bookmark"></span>'+
+								      '</span>'+
+								    '</span>' +
+								 ' </span>' +
+								 '<img src="img/recipes/320x350/' + recipe.name +'.jpg">'+
+								'</a>');
 }
-
+    
+	//$('.list-recipes').append('<span class="title-recipe">' + element.title +'</span>');
+    /*<span class="title-recipe"> TITULO DE LA RECETA (ATRIBUTO "title" ) </span>
+    <span class="metadata-recipe">
+      <span class="author-recipe"> NOMBRE DEL AUTO DE LA RECETA (ATRIBUTO "source.name") </span>*/
 
 
 /*
