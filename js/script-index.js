@@ -1,8 +1,8 @@
 $(document).ready( function(){
-
+	printNews();
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
-
+	
 });
 
 
@@ -12,6 +12,12 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	recipesArray.forEach(function(e){
+		console.log(e.highlighted);
+		if(e.highlighted == true){
+			return recipesArray;
+		}
+	});
 }
 
 /*
@@ -41,5 +47,13 @@ function renderActivities(activitiesArray) {
 function renderActivity(recipe) {
 	
 }
+
+//funcion que se encarga de pintar una noticia
+
+function printNews(){
+	$('.callout-news').append('<p>'+ 'NUEVAS RECETAS' +'</p>')
+}
+
+
 
 
