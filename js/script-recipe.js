@@ -1,9 +1,8 @@
 $(document).ready(function() {
-	$$('#menu').remove('recipe.html');
 	console.log('hola mundo');
+	$('#menu').remove('recipe.html'); //lo puse después porque interrumpia la navegación
 	showRecipe();
 	showMake();
-	
 });
 
 function showRecipe(){
